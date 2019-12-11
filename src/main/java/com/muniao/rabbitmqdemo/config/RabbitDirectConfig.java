@@ -16,7 +16,7 @@ public class RabbitDirectConfig
     @Bean
     Queue queue()
     {
-        return new Queue("hello-queue");
+        return new Queue("test_queue");
     }
 
     @Bean
