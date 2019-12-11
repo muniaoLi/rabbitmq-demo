@@ -2,6 +2,7 @@ package com.muniao.rabbitmqdemo;
 
 import com.muniao.rabbitmqdemo.config.RabbitFanoutConfig;
 import com.muniao.rabbitmqdemo.config.RabbitTopicConfig;
+import com.muniao.rabbitmqdemo.vo.UserVO;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,9 @@ class RabbitmqDemoApplicationTests
     @Test
     void directTest()
     {
-        rabbitTemplate.convertAndSend("hello-queue", "hello direct test2!");
+
+        rabbitTemplate.convertAndSend("hello-queue", new UserVO("lixp",30));
+
     }
 
     @Test
